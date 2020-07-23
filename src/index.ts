@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 declare global {
   interface Window {
-    __APP_VERSION__: string;
+    __REACT_APP_VERSION__: string;
   }
 }
 
@@ -19,7 +19,7 @@ type Status = 'checking' | 'current' | 'available';
 
 const reloadPage = () => window.location.reload(true);
 
-const currentVersion = window.__APP_VERSION__;
+const currentVersion = window.__REACT_APP_VERSION__;
 
 export const useUpdateCheck = (params: UpdateHookParams) => {
   const [status, setStatus] = useState<Status>('checking');

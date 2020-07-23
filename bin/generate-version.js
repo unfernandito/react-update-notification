@@ -53,7 +53,7 @@ function generate(argv) {
 
   const loadedIndex = cheerio.load(indexFile.toString());
   loadedIndex('head').append(
-    `<script>window.__APP_VERSION__ = "${appVersion}"; window.__APP_VERSION_FILE__ = "${argv.v}"</script>`
+    `<script>window.__REACT_APP_VERSION__ = "${appVersion}"; window.__REACT_APP_VERSION_FILE__ = "${argv.v}"</script>`
   );
   fs.writeFileSync(indexPath, loadedIndex.html());
 }
